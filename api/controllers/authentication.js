@@ -23,7 +23,7 @@ const register = (req, res) => {
 };
 
 const login = (req, res) => {
-  if (!req.body.email || !req.body.password) {
+  if (!req.body.name || !req.body.password) {
     return res.status(400).json({ message: "All fields required" });
   }
   passport.authenticate("local", (err, user, info) => {

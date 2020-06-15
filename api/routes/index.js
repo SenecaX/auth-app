@@ -1,13 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const ctrlAuth = require("../controllers/authentication");
-const jwt = require("express-jwt");
-const auth = jwt({
-  secret: process.env.JWT_SECRET,
-  userProperty: "payload"
-});
+const authenticationController = require("../controllers/authentication");
 
-router.post("/register", ctrlAuth.register);
-router.post("/login", ctrlAuth.login);
+router.post("/register", authenticationController.register);
+router.post("/login", authenticationController.login);
 
 module.exports = router;
