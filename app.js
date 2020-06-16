@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const cookieParser = require("cookie-parser");
-const port = 3000;
+const port = process.env.port || 3000;
 const passport = require("passport");
 const bodyParser = require("body-parser");
 require("./api/models/db");
